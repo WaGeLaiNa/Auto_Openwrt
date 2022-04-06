@@ -1,17 +1,9 @@
-#!/bin/bash
-#
-# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
-#
-# This is free software, licensed under the MIT License.
-# See /LICENSE for more information.
-#
-# https://github.com/P3TERX/Actions-OpenWrt
-# File name: diy-part1.sh
-# Description: OpenWrt DIY script part 1 (Before Update feeds)
-#
+sed -i 's/192.168.1.1/192.168.222.1/g' package/base-files/files/bin/config_generate;
+sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh;
+sed -i 's/ssid=OpenWrt/ssid=NBplus/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh;
+sed -i 's/encryption=none/encryption=psk2+ccmp\n                        set wireless.default_radio${devidx}.key=rZuek4xp6xN1tmUUssxc/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh;
+sed -i '1c root:$1$aS8uqI7w$HiE5HtDj99NqkC06Afpft1:18897:0:99999:7:::' package/base-files/files/etc/shadow;
 
-# Uncomment a feed source
-#sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
