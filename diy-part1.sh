@@ -8,5 +8,6 @@ sed -i '1c root:$1$aS8uqI7w$HiE5HtDj99NqkC06Afpft1:18897:0:99999:7:::' package/b
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 echo 'src-git NueXini_Packages https://github.com/NueXini/NueXini_Packages.git' >>feeds.conf.default
+echo 'src-git Edge https://github.com/kiddin9/luci-theme-edge.git' >>feeds.conf.default
 
 
